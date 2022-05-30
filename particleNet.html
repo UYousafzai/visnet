@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+
+<!--HTML Code For the Network Visualization and Connectivity Index Calculation Using Ad Hoc Networks-->
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Constellations</title>
+    <link rel="stylesheet" href="networking.css">
+
+</head>
+
+<body>
+    <!-- Rectangular switch -->
+    <!--I am using the grid system to layout the entire style of the application-->
+    <!--Container for the check button of selecting to place people via clicks-->
+    <div class="grid-container">
+        <div class="grid-item m-l-4">
+            <h4>
+                Place People
+            </h4>
+        </div>
+        <div class="grid-item m-t-2">
+            <label class="switch">
+                <input id="people_check" type="checkbox">
+                <span class="slider"></span>
+            </label>
+        </div>
+    </div>
+
+    <!--Container for the check button of selecting to place towers in the network via clicks-->
+    <div class="grid-container">
+        <div class="grid-item m-l-4">
+            <h4>
+                Place Towers
+            </h4>
+        </div>
+        <div class="grid-item m-t-2">
+            <label class="switch">
+                <input id="tower_check" type="checkbox">
+                <span class="slider"></span>
+            </label>
+        </div>
+    </div>
+
+    <!--To See the network connection however you can turn them off to remove clutter-->
+    <div class="grid-container">
+        <div class="grid-item m-l-4">
+            <h4>
+                Show Tower Connections
+            </h4>
+        </div>
+        <div class="grid-item m-t-2">
+            <label class="switch">
+                <input id="tower_show" type="checkbox">
+                <span class="slider"></span>
+            </label>
+        </div>
+    </div>
+
+    <!--This Slider allows you to change the radius of the connection of towers to both people and towers themselves-->
+    <div class="grid-container">
+        <div class="grid-item m-l-4">
+            <h4>
+                Set Tower Radius
+            </h4>
+        </div>
+        <!--These Show you what settings are selected at the moment as well as the current connectivity index-->
+        <div class="grid-item m-t-2">
+            <input type="range" min="1" max="200" value="100" class="sliderbar" id="towerRange">
+        </div>
+        <div class="grid-item m-l-4">
+            <h4 class="inlb"> Current Radius: </h4>
+            <h4 class="inlb" id="currentRange">100</h4>
+        </div>
+        <div class="grid-item m-l-4">
+            <h4 class="inlb"> Connectivity Index: </h4>
+            <h4 class="inlb" id="currentCI"></h4>
+        </div>
+    </div>
+
+    <!--Allows you to reset the network and start from fresh-->
+    <div class="grid-container">
+        <div class="grid-item m-l-4">
+            <h4 class="inlb">
+                Reset Network:
+            </h4>
+            <button id="resetNetwork" class="inlb">
+                Reset
+            </button>
+
+        </div>
+    </div>
+    <!--Clicking this updates the Connectivity Index-->
+    <div class="grid-container">
+        <div class="grid-item m-l-4">
+            <h4 class="inlb">
+                Calculate CI:
+            </h4>
+            <button id="ciButton" class="inlb">
+                Press
+            </button>
+
+        </div>
+    </div>
+
+    <!--Canvas in The HTML file-->
+    <center>
+        <canvas id="canvas" width="1340" height="610"></canvas>
+        <center>
+
+        </center>
+    </center>
+
+    <!--Script Import for the visualization-->
+    <script src="particles.js"></script>
+
+</body>
+
+</html>
